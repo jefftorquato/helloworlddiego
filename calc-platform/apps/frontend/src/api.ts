@@ -1,16 +1,8 @@
-export type Calculation = {
-  id: string;
-  expression: string;
-  result: string;
-  createdAt: string;
-};
+import { Calculation, CreateCalculationInput } from '@calc/shared';
 
 const API_BASE = 'http://localhost:3000';
 
-export async function createCalculation(payload: {
-  expression: string;
-  result: string;
-}) {
+export async function createCalculation(payload: CreateCalculationInput) {
   const response = await fetch(`${API_BASE}/calculations`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

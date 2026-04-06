@@ -7,9 +7,9 @@
     "build": "nest build",
     "start": "node dist/main",
     "lint": "echo 'No linter configured'",
-    "prisma:generate": "dotenv -e ../../prisma/.env.example -- prisma generate --schema ../../prisma/schema.prisma",
-    "prisma:migrate": "dotenv -e ../../prisma/.env.example -- prisma migrate dev --schema ../../prisma/schema.prisma",
-    "prisma:studio": "dotenv -e ../../prisma/.env.example -- prisma studio --schema ../../prisma/schema.prisma"
+    "prisma:generate": "dotenv -e ../../.env -- prisma generate --schema ../../prisma/schema.prisma",
+    "prisma:migrate": "dotenv -e ../../.env -- prisma migrate dev --schema ../../prisma/schema.prisma",
+    "prisma:studio": "dotenv -e ../../.env -- prisma studio --schema ../../prisma/schema.prisma"
   },
   "dependencies": {
     "@nestjs/common": "^10.3.10",
@@ -19,7 +19,8 @@
     "class-validator": "^0.14.1",
     "class-transformer": "^0.5.1",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "@calc/shared": "workspace:*"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.4.2",

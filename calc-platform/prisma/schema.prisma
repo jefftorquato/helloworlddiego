@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = env("DATABASE_PROVIDER")
+  url      = env("DATABASE_URL")
+}
+
+model Calculation {
+  id         String   @id @default(uuid())
+  expression String
+  result     String
+  createdAt  DateTime @default(now())
+}

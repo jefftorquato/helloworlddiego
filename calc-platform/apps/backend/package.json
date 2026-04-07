@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nest start --watch",
-    "build": "nest build",
+    "build": "pnpm --filter @calc/shared build && nest build",
     "start": "node dist/main",
     "lint": "echo 'No linter configured'",
     "prisma:generate": "dotenv -e ../../.env -- prisma generate --schema ../../prisma/schema.prisma",

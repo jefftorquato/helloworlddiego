@@ -11,8 +11,7 @@
     "prisma:generate": "pnpm --filter backend prisma:generate",
     "prisma:push": "pnpm --filter backend prisma:push",
     "prisma:migrate": "pnpm --filter backend prisma:migrate",
-    "prisma:studio": "pnpm --filter backend prisma:studio",
-    "postinstall": "pnpm prisma:generate || true"
+    "prisma:studio": "pnpm --filter backend prisma:studio"
   },
   "devDependencies": {
     "turbo": "^2.0.12"

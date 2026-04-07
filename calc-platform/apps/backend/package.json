@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "pnpm --filter @calc/shared build",
     "dev": "nest start --watch",
     "build": "pnpm --filter @calc/shared build && nest build",
     "start": "node dist/main",

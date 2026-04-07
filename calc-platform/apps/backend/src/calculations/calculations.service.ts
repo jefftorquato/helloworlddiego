@@ -1,8 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { randomUUID } from 'crypto';
-import { Calculation } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateCalculationDto } from './create-calculation.dto';
+
+type Calculation = {
+  id: string;
+  expression: string;
+  result: string;
+  createdAt: Date;
+};
 
 @Injectable()
 export class CalculationsService {

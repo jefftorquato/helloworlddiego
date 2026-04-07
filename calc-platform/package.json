@@ -8,9 +8,11 @@
     "lint": "turbo run lint",
     "backend:dev": "pnpm --filter backend dev",
     "frontend:dev": "pnpm --filter frontend dev",
-    "prisma:generate": "pnpm --filter backend prisma:generate",
+    "prisma:generate": "pnpm --filter backend exec prisma generate --schema ./prisma/schema.prisma",
+    "prisma:push": "pnpm --filter backend exec prisma db push --schema ./prisma/schema.prisma",
     "prisma:migrate": "pnpm --filter backend prisma:migrate",
-    "prisma:studio": "pnpm --filter backend prisma:studio"
+    "prisma:studio": "pnpm --filter backend prisma:studio",
+    "postinstall": "pnpm prisma:generate"
   },
   "devDependencies": {
     "turbo": "^2.0.12"

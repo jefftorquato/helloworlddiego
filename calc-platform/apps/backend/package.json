@@ -9,7 +9,8 @@
     "lint": "echo 'No linter configured'",
     "prisma:generate": "dotenv -e ../../.env -- prisma generate --schema ../../prisma/schema.prisma",
     "prisma:migrate": "dotenv -e ../../.env -- prisma migrate dev --schema ../../prisma/schema.prisma",
-    "prisma:studio": "dotenv -e ../../.env -- prisma studio --schema ../../prisma/schema.prisma"
+    "prisma:studio": "dotenv -e ../../.env -- prisma studio --schema ../../prisma/schema.prisma",
+    "prisma:push": "dotenv -e ../../.env -- prisma db push --schema ../../prisma/schema.prisma"
   },
   "dependencies": {
     "@nestjs/common": "^10.3.10",

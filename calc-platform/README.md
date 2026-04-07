@@ -11,28 +11,38 @@ Minimal monorepo calculator platform using pnpm + turbo.
 
 ## Run locally
 
+### A) Prototype mode (no DB persistence required)
+
 1. Install dependencies:
 
    ```bash
    pnpm install
    ```
 
-2. Generate Prisma client:
+2. Start backend:
+
+   ```bash
+   pnpm --filter backend dev
+   ```
+
+3. Start frontend:
+
+   ```bash
+   pnpm --filter frontend dev
+   ```
+
+### B) Optional Prisma local persistence setup
+
+1. Generate Prisma client:
 
    ```bash
    pnpm prisma:generate
    ```
 
-3. Create local SQLite DB/migrations:
+2. Push schema to local database:
 
    ```bash
-   pnpm prisma:migrate
-   ```
-
-4. Start both apps:
-
-   ```bash
-   pnpm dev
+   pnpm prisma:push
    ```
 
 Frontend: http://localhost:5173

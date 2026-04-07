@@ -12,7 +12,7 @@
     "prisma:push": "pnpm --filter backend prisma:push",
     "prisma:migrate": "pnpm --filter backend prisma:migrate",
     "prisma:studio": "pnpm --filter backend prisma:studio",
-    "postinstall": "pnpm prisma:generate"
+    "postinstall": "pnpm prisma:generate || true"
   },
   "devDependencies": {
     "turbo": "^2.0.12"

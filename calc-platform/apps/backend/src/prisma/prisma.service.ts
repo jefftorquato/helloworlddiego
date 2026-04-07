@@ -4,7 +4,11 @@ import { PrismaClient } from '@prisma/client';
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {
   async onModuleInit() {
-    await this.$connect();
+    try {
+      await this.$connect();
+    } catch (error) {
+      console.warn('Prisma connection unavailable, running in prototype mode', error);
+    }
   }
 
   async enableShutdownHooks(app: INestApplication) {

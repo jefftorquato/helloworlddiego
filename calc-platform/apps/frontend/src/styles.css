@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   font-family: Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: #f8fafc;
@@ -9,4 +5,222 @@
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #020617;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  color: #f1f5f9;
+}
+
+.layout-grid {
+  display: grid;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.card {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(30, 41, 59, 0.85);
+  background: rgba(15, 23, 42, 0.88);
+  padding: 1.25rem;
+  backdrop-filter: blur(14px);
+}
+
+.calculator-card {
+  box-shadow: 0 20px 60px -20px rgba(37, 99, 235, 0.45);
+}
+
+.history-card {
+  box-shadow: 0 20px 60px -20px rgba(15, 23, 42, 0.8);
+}
+
+.panel-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.display-panel {
+  margin-bottom: 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(51, 65, 85, 0.85);
+  background: rgba(2, 6, 23, 0.7);
+  padding: 1rem;
+  box-shadow: inset 0 1px 0 rgba(15, 23, 42, 0.55);
+}
+
+.expression-input {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background: rgba(15, 23, 42, 0.72);
+  padding: 0.75rem 1rem;
+  color: #f8fafc;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.expression-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35);
+}
+
+.result-label {
+  text-align: right;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.result-value {
+  margin-top: 0.125rem;
+  text-align: right;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #60a5fa;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.calc-button {
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  padding: 1rem 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #f8fafc;
+  transition: transform 150ms ease, background-color 150ms ease, border-color 150ms ease;
+  cursor: pointer;
+}
+
+.calc-button:active {
+  transform: scale(0.98);
+}
+
+.digit-button {
+  background: rgba(30, 41, 59, 0.92);
+}
+
+.digit-button:hover {
+  background: rgba(51, 65, 85, 0.95);
+}
+
+.operator-button {
+  border-color: rgba(59, 130, 246, 0.65);
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+}
+
+.operator-button:hover {
+  background: rgba(59, 130, 246, 0.26);
+}
+
+.equals-button {
+  grid-column: span 3;
+  border-color: rgba(96, 165, 250, 0.65);
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 12px 24px -14px rgba(37, 99, 235, 0.95);
+}
+
+.equals-button:hover {
+  background: #3b82f6;
+}
+
+.history-loading {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.history-error {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: #fca5a5;
+}
+
+.history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.history-item {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background: rgba(30, 41, 59, 0.82);
+  padding: 0.75rem 1rem;
+  color: #f8fafc;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.history-item:hover {
+  border-color: rgba(96, 165, 250, 0.7);
+  background: rgba(51, 65, 85, 0.8);
+}
+
+.history-expression {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+}
+
+.history-result {
+  margin-top: 0.25rem;
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .app-shell {
+    padding: 2rem 1.5rem;
+  }
+
+  .card {
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .layout-grid {
+    grid-template-columns: minmax(320px, 430px) minmax(280px, 1fr);
+    align-items: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-grid {
+    gap: 2rem;
+  }
+
+  .app-shell {
+    padding-inline: 2rem;
+  }
 }
